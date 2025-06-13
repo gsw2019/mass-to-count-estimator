@@ -27,4 +27,4 @@ def popup_secret_word_input():
                                \|_________|   \|_________|                                            \|___|/                                                      |\__\
                                                                                                                                                                    \|__|    
 """
-    sg.popup(secret_text, title="Secret Message", font=("Courier New", 12), line_wi
+    sg.popup(secret_text, title="Secret Message", font=("Courier New", 12), line_width=170)
