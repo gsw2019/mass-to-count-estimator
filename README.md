@@ -9,14 +9,14 @@ A lightweight desktop application that estimates inventory counts using mass mea
 - 🧠 Converts weight to item count using user-defined formulas
 - 📁 Supports multiple items and categories
 - 🧪 testing...?
-- 🖼️ GUI built with Tkinter (user-friendly and portable)
+- 🖼️ GUI built with...(Tkinter)
 - 🗃️ Local database support
 
 ---
 
 ## 🖥️ Demo
 
-# TODO <!-- ![screenshot](assets/screenshot1.png) -->
+### TODO <!-- ![screenshot](assets/screenshot1.png) -->
 
 ---
 
@@ -39,8 +39,8 @@ A lightweight desktop application that estimates inventory counts using mass mea
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/inventory-automator.git
-cd inventory-automator
+git clone https://github.com/yourusername/mass-to-count-estimator.git
+cd mass-to-count-estimator
 ```
 
 2. **Create and activate a virtual environemnt**
@@ -77,6 +77,8 @@ No Python installation required.
 
 ## 🧪 Running Tests
 
+### TODO
+
 ```bash
 python -m unittest discover tests
 ```
@@ -87,6 +89,7 @@ python -m unittest discover tests
 
 - Replace text file storage with SQLite local DB
 - Improve GUI styling and use open source GUI package
+- implement a suite of unittests
 
 ---
 
