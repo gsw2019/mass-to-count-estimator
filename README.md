@@ -1,6 +1,10 @@
 # Mass-To-Count Estimator
 
-A lightweight desktop application that estimates inventory counts using mass measurements. Built with Python and designed for non-programmers, this tool simplifies item tracking without needing manual counting.
+A lightweight desktop application that estimates inventory counts using mass measurements. Built with Python and designed for non-programmers, this tool simplifies item tracking without the need for manual counting.
+
+**Note: This project is currently undergo a major redesign.**
+
+The original version (v1.0.0) is still available in the [Releases](https://github.com/gsw2019/mass-to-count-estimator/releases) section.
 
 ---
 
@@ -39,7 +43,7 @@ A lightweight desktop application that estimates inventory counts using mass mea
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/mass-to-count-estimator.git
+git clone https://github.com/gsw2019/mass-to-count-estimator.git
 cd mass-to-count-estimator
 ```
 
