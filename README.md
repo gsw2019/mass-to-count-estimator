@@ -2,7 +2,7 @@
 
 
 
-**Note: This project is currently undergo a major redesign.**
+**Note: This project is currently undergoing a major redesign. Desktop apps are out, web apps are in.**
 
 The original version (v1.0.0) is still available in the [Releases](https://github.com/gsw2019/mass-to-count-estimator/releases) section.
 
