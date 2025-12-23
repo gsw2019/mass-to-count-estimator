@@ -9,7 +9,7 @@ function App() {
         description="Estimate the number of items based on their total mass."
       />
 
-
+      {/* Main content can go here */}
 
     </>
   )
