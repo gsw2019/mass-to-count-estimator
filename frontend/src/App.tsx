@@ -1,4 +1,5 @@
 import Header from './components/Header.tsx'
+import Body  from "./components/Body.tsx";
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
         description="Estimate the number of items based on their total mass."
       />
 
-      {/* Main content can go here */}
+      <Body
+
+      />
 
     </>
   )
