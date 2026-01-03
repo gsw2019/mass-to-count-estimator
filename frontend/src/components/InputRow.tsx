@@ -9,9 +9,10 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
   // calculate estimated count when values change
   useEffect(() => {
     if (totalMass && knownCount) {
-      // Your calculation logic here - example:
-      // const calculated = (parseFloat(totalMass) / parseFloat(knownCount)) * 100;
+      // calculation for when both values are present
       // setEstimatedCount(calculated.toFixed(2));
+    } else if (totalMass && !knownCount) {
+      // calculation for when only total mass is present
     } else {
       setEstimatedCount('');
     }

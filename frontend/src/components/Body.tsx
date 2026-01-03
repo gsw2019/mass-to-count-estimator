@@ -56,15 +56,14 @@ function Body() {
 
   return (
     <div className="body">
-      <p className="text-3xl pt-4">Determine your counts:</p>
+      <p className="text-3xl pt-4">Determine Counts:</p>
 
       {/* column titles */}
-      <div className="flex gap-4 pt-4">
+      <div className="flex gap-5 pt-4">
         <div className="w-1/3 font-bold">Item Name</div>
         <div className="w-1/3 font-bold">Total Mass (oz)</div>
         <div className="w-1/3 font-bold">Known Count (optional)</div>
         <div className="w-1/3 font-bold">Estimated Count</div>
-        <div className="w-16"></div>
       </div>
 
       {/* input rows */}
@@ -84,7 +83,7 @@ function Body() {
         onClick={addRow}
         className="mt-4 px-4 py-2 text-white rounded hover:bg-blue-600 hover:text-cyan-400"
       >
-        + Add Another Item
+        + Add Item
       </button>
     </div>
   );
