@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from .database import get_items_collection
 
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",
+    "http://localhost:5173",    # where we can get requests from (where frontend runs)
     "localhost:5173"
 ]
 
@@ -21,3 +21,9 @@ app.add_middleware(
 @app.get("/", tags=["root"])
 async def read_root() -> dict:
     return {"message": "Welcome to FastAPI."}
+
+@app.get("/items", tags=["inventory"])
+async def get_items() -> dict:
+    return {
+        "items": await get_items_collection("marcos")
+    }

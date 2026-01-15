@@ -8,15 +8,26 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
 
   // calculate estimated count when values change
   useEffect(() => {
+    // get the item corresponding to the selection id so can get its batch size and batch mass
+    // have Item | undefined because find() might not find anything
+    const item: Item | undefined = items.find(itm => itm.id === selectedItem);
+
+    if (!item) {
+      setEstimatedCount('');
+      return;
+    }
+
     if (totalMass && knownCount) {
       // calculation for when both values are present
-      // setEstimatedCount(calculated.toFixed(2));
+      const estimate = ((Number(totalMass) / item.batch_mass_oz) * item.batch_size) + Number(knownCount)
+      setEstimatedCount(estimate.toFixed(2));
     } else if (totalMass && !knownCount) {
-      // calculation for when only total mass is present
+      const estimate = (Number(totalMass) / item.batch_mass_oz) * item.batch_size
+      setEstimatedCount(estimate.toFixed(2));
     } else {
       setEstimatedCount('');
     }
-  }, [totalMass, knownCount]);
+  }, [totalMass, knownCount, items, selectedItem]);
 
   return (
     <div className="flex gap-4 pt-4">
@@ -32,11 +43,14 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
           </option>
 
           {/* populates dropdown selection with items from database */}
-          {items.map((item: Item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
+          {items.map((item: Item) => {
+            // console.log('Item ID:', item.id, 'Item:', item);
+            return (
+              <option key={item.id} value={item.id}>
+                {item.item_name}
+              </option>
+            );
+          })}
 
         </select>
       </div>

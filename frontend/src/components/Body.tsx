@@ -2,6 +2,9 @@ import InputRow from "./InputRow.tsx";
 import {useEffect, useState} from "react";
 import type {Item, Row} from "../types/types.ts";
 
+// get the API URL from environment variables (React standard)
+const API_URL = import.meta.env.VITE_API_URL
+
 
 function Body() {
   const [items, setItems] = useState<Item[]>([]);
@@ -12,13 +15,10 @@ function Body() {
   // returned like {id: 1, name: "item1", count: 20, mass: 16}
   useEffect(() => {
     const fetchItems = async () => {
-      // do a fetch to the backend to get the items
-      // setItems(data);
-      setItems([
-        {id: "1", name: "item1"},
-        {id: "2", name: "item2"},
-        {id: "3", name: "item3"},
-      ]);
+      fetch(`${API_URL}/items`)
+        .then(response => response.json())
+        .then(data => setItems(data.items))
+        .catch(error => console.error('Error fetching items:', error));
     };
     fetchItems();
   }, []);
@@ -72,7 +72,7 @@ function Body() {
           key={row.id}
           items={getAvailableItems(row.id)}
           selectedItem={row.selectedItem}
-          onItemSelect={(itemId: any) => updateRowSelection(row.id, itemId)}
+          onItemSelect={(itemId: string) => updateRowSelection(row.id, itemId)}
           onRemove={() => removeRow(row.id)}
           showRemove={rows.length > 1}
         />

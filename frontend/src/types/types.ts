@@ -2,7 +2,9 @@
 
 export interface Item {
   id: string;
-  name: string;
+  item_name: string;
+  batch_size: number;
+  batch_mass_oz: number;
 }
 
 export interface Row {
