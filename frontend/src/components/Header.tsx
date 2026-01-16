@@ -1,6 +1,11 @@
+/*
+ * header component for the Mass to Count Estimator application
+ * displays the logo, title, description, and login/sign-up buttons.
+ */
+
 import logo from '../assets/logo.svg';
 
-function Header(props: { title: string, description: string }) {
+function Header() {
 
   return (
     // className is Tailwind CSS for styling
@@ -15,8 +20,8 @@ function Header(props: { title: string, description: string }) {
           />
 
           <div className="flex flex-col self-start">
-              <p className="text-6xl font-mono">{props.title}</p>
-              <p className="text-lg text-gray-400 font-mono">{props.description}</p>
+              <p className="text-6xl font-mono">Mass to Count Estimator</p>
+              <p className="text-lg text-gray-400 font-mono">Estimate the number of items based on their total mass.</p>
           </div>
       </div>
 

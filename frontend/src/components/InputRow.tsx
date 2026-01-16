@@ -1,3 +1,8 @@
+/*
+ * renders a row with item selection, total mass input, known count input, and estimated count display
+ * actively calculates estimated count based on selected item, total mass, and known count
+ */
+
 import {useEffect, useState} from "react";
 import type {Item, InputRowProps} from "../types/types.ts";
 
