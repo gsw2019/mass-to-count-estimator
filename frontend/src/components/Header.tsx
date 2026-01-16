@@ -4,7 +4,7 @@ function Header(props: { title: string, description: string }) {
 
   return (
     // className is Tailwind CSS for styling
-    <header className="flex items-center justify-between px-0 py-3 border-b">
+    <header className="flex items-center justify-between px-0 py-3 border-b-4 border-gray-300 ">
 
       {/* Left side: logo + title/description */}
       <div className="flex items-center gap-2">
