@@ -27,8 +27,8 @@ function Header() {
 
       {/* Right side: buttons */}
       <div className="flex flex-col items-center gap-4 pr-15">
-          <button className="px-4 py-2 text-white rounded hover:text-cyan-400 hover:bg-blue-700 w-25 h-12">Login</button>
-          <button className="px-4 py-2 text-white rounded hover:text-cyan-400 hover:bg-blue-700 w-25 h-12">Sign Up</button>
+          <button className="px-4 py-2 text-white rounded hover:text-cyan-400 w-25 h-12">Login</button>
+          <button className="px-4 py-2 text-white rounded hover:text-cyan-400 w-25 h-12">Sign Up</button>
       </div>
 
     </header>

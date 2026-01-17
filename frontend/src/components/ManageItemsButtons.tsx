@@ -1,4 +1,4 @@
-import type {Item} from "../types/types.ts";
+import type { Item } from "../types/types.ts";
 import AddItem from "./AddItem.tsx";
 import RemoveItem from "./RemoveItem.tsx";
 import EditItem from "./EditItem.tsx";
@@ -8,7 +8,7 @@ import ViewItems from "./ViewItems.tsx";
 
 
 
-function ManageItems(props: { items: Item[] }) {
+function ManageItemsButtons(props: { items: Item[] }) {
   const items = props.items;
 
   return (
@@ -56,7 +56,7 @@ function ManageItems(props: { items: Item[] }) {
           <Route path="/add-item" element={<AddItem />} />
           <Route path="/remove-item" element={<RemoveItem />} />
           <Route path="/edit-item" element={<EditItem />} />
-          <Route path="/view-items" element={<ViewItems /> } />
+          <Route path="/view-items" element={<ViewItems items={items}/>  } />
         </Routes>
       </div>
 
@@ -65,4 +65,4 @@ function ManageItems(props: { items: Item[] }) {
 
 }
 
-export default ManageItems
+export default ManageItemsButtons;

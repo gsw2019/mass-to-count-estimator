@@ -41,7 +41,7 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
           className="w-full border border-gray-300 rounded px-2 py-1 h-8.5"
           value={selectedItem}
           onChange={(e) => onItemSelect(e.target.value)}
-        >
+          >
           {/* unselected option*/}
           <option value="" disabled>
             Select an item

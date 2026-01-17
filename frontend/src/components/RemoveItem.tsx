@@ -2,7 +2,7 @@
 function RemoveItem() {
 
   return (
-    <div>Remove Item</div>
+    <div className="pt-4">This feature is not currently supported</div>
   )
 
 }
