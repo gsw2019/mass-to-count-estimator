@@ -7,6 +7,7 @@ app = FastAPI()
 origins = [
     "http://localhost:5173",    # where we can get requests from (where frontend runs)
     "localhost:5173"
+
 ]
 
 # so can specify where requests can come from
