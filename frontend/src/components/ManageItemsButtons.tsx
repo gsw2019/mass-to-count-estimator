@@ -18,33 +18,25 @@ function ManageItemsButtons(props: { items: Item[] }) {
       {/* button options */}
       <div className="ManageItemButtons flex gap-5 pt-4">
         <Link to="/add-item">
-          <button
-            className="text-white hover:text-cyan-400 hover:bg-blue-700 font-bold py-2 px-4 rounded"
-          >
+          <button className="button">
             Add New Item
           </button>
         </Link>
 
         <Link to="/remove-item">
-          <button
-            className="hover:bg-blue-700 text-white hover:text-cyan-400 font-bold py-2 px-4 rounded"
-          >
+          <button className="button">
             Remove Existing Item
           </button>
         </Link>
 
         <Link to="/edit-item">
-          <button
-            className="hover:bg-blue-700 text-white hover:text-cyan-400 font-bold py-2 px-4 rounded"
-          >
+          <button className="button">
             Edit Existing Item
           </button>
         </Link>
 
         <Link to="/view-items">
-          <button
-            className="hover:bg-blue-700 text-white hover:text-cyan-400 font-bold py-2 px-4 rounded"
-          >
+          <button className="button">
             View All Items
           </button>
         </Link>

@@ -64,7 +64,7 @@ function HowItWorks() {
             Say we weigh a batch of <b>25</b> Spoons and it has a mass of <b>4.3 oz</b>.
             Then we weigh all the spoons we have and get a total mass of <b>111.5 oz</b>.
             Also, we have 2 boxes of unopened spoons that are each labeled as having a count of 100 (know count of 2 × 100 = <b>200</b> spoons).
-            Given these four values, we can estimate the total count of packets we have using <b><i>equation 2</i></b>:
+            Given these four values, we can estimate the total count of spoons we have using <b><i>equation 2</i></b>:
           </p>
           <p className="pl-8 pt-4 font-mono">
             estimated_count = ((111.5 oz / 4.3 oz) × 25) + 200 = 848.3 ≈ 848 spoons
@@ -90,9 +90,9 @@ function HowItWorks() {
           >
             <button
               onClick={() => toggleSection(section.id)}
-              className="w-full px-6 py-4 flex items-center justify-between text-left text-white hover:text-cyan-400"
+              className="w-full flex items-center justify-between button"
             >
-                <span className="text-lg font-semibold">
+                <span>
                   {section.title}
                 </span>
               <ChevronDown
@@ -113,7 +113,7 @@ function HowItWorks() {
                   : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="px-6 py-4 text-white border-l border-r border-b rounded border-white">
+              <div className="dropdown-content">
                 {section.content}
               </div>
             </div>

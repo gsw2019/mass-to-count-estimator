@@ -56,7 +56,7 @@ function ManagingItems() {
       <p className="text-2xl pt-7">Managing Items</p>
       <p className="pt-2">
         This section explains how to manage the items in the Mass to Count Estimator (MTCE) application.
-        **Currently, under minimal traffic, only adding new items is supported.
+        **Currently, only adding new items is supported.
         Editing and removing existing items needs more secure handling and is not yet implemented.**
       </p>
 
@@ -68,9 +68,9 @@ function ManagingItems() {
           >
             <button
               onClick={() => toggleSection(section.id)}
-              className="w-full px-6 py-4 flex items-center justify-between text-left text-white hover:text-cyan-400"
+              className="w-full flex items-center justify-between text-left button"
             >
-                <span className="text-lg font-semibold">
+                <span>
                   {section.title}
                 </span>
               <ChevronDown
@@ -91,7 +91,7 @@ function ManagingItems() {
                   : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="px-6 py-4 text-white border-l border-r border-b rounded border-white">
+              <div className="dropdown-content">
                 {section.content}
               </div>
             </div>

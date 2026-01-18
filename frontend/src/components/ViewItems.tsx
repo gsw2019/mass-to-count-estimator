@@ -6,7 +6,7 @@ function ViewItems(props: {items: Item[]}) {
   return (
     <div>
       <p className="text-2xl pt-4">All Recorded Items</p>
-      <table className="w-7/12 text-left text-white border border-gray-300 mt-4">
+      <table className="w-7/12 text-left border border-gray-300 mt-4">
         <thead>
         <tr>
           <th className="border-b-5 p-2">Item Name</th>

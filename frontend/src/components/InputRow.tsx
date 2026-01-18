@@ -35,7 +35,7 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
   }, [totalMass, knownCount, items, selectedItem]);
 
   return (
-    <div className="flex gap-4 pt-4">
+    <div className="flex gap-4 pt-4 pr-4 items-center">
       <div className="w-1/3">
         <select
           className="w-full border border-gray-300 rounded px-2 py-1 h-8.5"
@@ -91,14 +91,17 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
       </div>
 
       {/* remove button to delete rows*/}
-      {showRemove && (
-          <button
-            onClick={onRemove}
-            className="w-13 h-9 text-red-500 hover:text-red-700 font-bold text-2xl flex justify-center items-center"
-          >
-          ✕
-          </button>
-      )}
+      <button
+        onClick={onRemove}
+        disabled={!showRemove}
+        className={`button flex justify-center items-center ${
+          showRemove
+            ? 'text-red-500 btn cursor-pointer'
+            : 'text-gray-300 cursor-not-allowed'
+        }`}
+      >
+        ✕
+      </button>
     </div>
   );
 }
