@@ -14,9 +14,9 @@ function Footer() {
         <a href={"https://github.com/gsw2019"} className="pl-2">GitHub</a> |
         <a href={"https://www.linkedin.com/in/garretwilson-cs-mcb/"} className="pl-2">LinkedIn</a>
       </p>
-      <p>
-        <Analytics />
-      </p>
+
+      <Analytics />
+
     </div>
   );
 
