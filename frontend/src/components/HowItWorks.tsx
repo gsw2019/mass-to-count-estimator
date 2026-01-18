@@ -83,6 +83,8 @@ function HowItWorks() {
       </p>
 
       <div className="space-y-3 pt-3">
+        {/* using typescript to fill this div with a dropdown for each section */}
+        {/* have to wrap typescript in {} to evaluate result and render it */}
         {sections.map((section) => (
           <div
             key={section.id}
