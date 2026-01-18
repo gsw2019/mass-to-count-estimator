@@ -4,10 +4,12 @@ from .database import get_items_collection
 
 app = FastAPI()
 
+# where we can get requests from (where frontend runs)
 origins = [
-    "http://localhost:5173",    # where we can get requests from (where frontend runs)
+    "http://localhost:5173",
     "localhost:5173"
-
+    "https://mass-to-count-estimator.vercel.app/"
+    "mass-to-count-estimator.vercel.app"
 ]
 
 # so can specify where requests can come from
