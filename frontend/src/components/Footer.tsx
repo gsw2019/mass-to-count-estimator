@@ -4,6 +4,8 @@
  */
 
 
+import {Analytics} from "@vercel/analytics/react";
+
 function Footer() {
 
   return (
@@ -11,6 +13,9 @@ function Footer() {
       <p>Built by Garret Wilson |
         <a href={"https://github.com/gsw2019"} className="pl-2">GitHub</a> |
         <a href={"https://www.linkedin.com/in/garretwilson-cs-mcb/"} className="pl-2">LinkedIn</a>
+      </p>
+      <p>
+        <Analytics />
       </p>
     </div>
   );
