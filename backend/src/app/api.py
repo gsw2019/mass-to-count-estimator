@@ -26,7 +26,8 @@ async def read_root_route() -> dict:
     return {"message": "Welcome to FastAPI."}
 
 #
-# TODO: allow user to choose establishment and pass it through to here
+# TODO: allow user to choose establishment and pass it through to here.
+#  After establishment chosen, then fetch data?
 #
 
 @app.get("/items", tags=["inventory"])
