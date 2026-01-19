@@ -4,7 +4,7 @@ import type { Item } from "../types/types.ts";
 import ManageItemsButtons from "./ManageItemsButtons.tsx";
 import AboutMTCE from "./AboutMTCE.tsx";
 
-// get the API URL from environment variables (React standard)
+// get the API URL from environment variables
 const API_URL = import.meta.env.VITE_API_URL
 
 
@@ -26,7 +26,7 @@ function Body() {
   return (
     <div className="Body">
       <DetermineCounts items={items} />
-      <ManageItemsButtons items={items} />
+      <ManageItemsButtons setItems={setItems} items={items}/>
       <AboutMTCE />
     </div>
   );

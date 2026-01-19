@@ -1,14 +1,14 @@
 import {useState} from "react";
-import type {Row, Item} from "../types/types.ts";
-import InputRow from "./InputRow.tsx";
+import type {InputRow, Item} from "../types/types.ts";
+import InputItemRow from "./InputItemRow.tsx";
 
 function DetermineCounts(props: { items: Item[] }) {
-  const [rows, setRows] = useState<Row[]>([{ id: 1, selectedItem: '' }]);
+  const [rows, setRows] = useState<InputRow[]>([{ id: 1, selectedItem: '' }]);
   const items = props.items;
 
   // update the array that holds the row objects
   const addRow = () => {
-    const newRow: Row = { id: Date.now(), selectedItem: '' };
+    const newRow: InputRow = { id: Date.now(), selectedItem: '' };
     // spread operator - its taking all the objects in rows and adding newRow to the end of that array
     setRows([...rows, newRow]);
 
@@ -39,21 +39,21 @@ function DetermineCounts(props: { items: Item[] }) {
   };
 
   return (
-      <div className="DetermineCounts border-b-1 border-gray-300 py-3">
-        <p className="text-3xl font-bold pt-4">Determine Counts</p>
+      <div className="DetermineCounts border-b-1 border-gray-300 pt-3 pb-7">
+        <p className="text-3xl font-bold pt-4">Estimate Counts</p>
 
         {/* column titles */}
-        <div className="flex gap-5 pt-4 pr-4">
+        <div className="flex gap-10 pt-4 pr-4">
           <div className="w-1/3 font-bold">Item Name</div>
           <div className="w-1/3 font-bold">Total Mass (oz)</div>
           <div className="w-1/3 font-bold">Known Count (optional)</div>
           <div className="w-1/3 font-bold">Estimated Count</div>
-          <div className="w-13"></div> {/* placeholder for delete button */}
+          <div className="w-15"></div> {/* placeholder for delete button */}
         </div>
 
         {/* input rows */}
         {rows.map((row) => (
-          <InputRow
+          <InputItemRow
             key={row.id}
             items={getAvailableItems(row.id)}
             selectedItem={row.selectedItem}
@@ -68,7 +68,7 @@ function DetermineCounts(props: { items: Item[] }) {
           onClick={addRow}
           className="button mt-4 px-4 py-2"
         >
-          + Add Item
+          + Add Input Row
         </button>
       </div>
   )

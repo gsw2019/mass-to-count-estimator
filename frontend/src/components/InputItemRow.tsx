@@ -6,7 +6,7 @@
 import {useEffect, useState} from "react";
 import type {Item, InputRowProps} from "../types/types.ts";
 
-function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: InputRowProps) {
+function InputItemRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: InputRowProps) {
   const [totalMass, setTotalMass] = useState('');
   const [knownCount, setKnownCount] = useState('');
   const [estimatedCount, setEstimatedCount] = useState('');
@@ -94,10 +94,10 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
       <button
         onClick={onRemove}
         disabled={!showRemove}
-        className={`button flex justify-center items-center ${
+        className={`ml-auto flex justify-center items-center ${
           showRemove
-            ? 'text-red-500 btn cursor-pointer'
-            : 'text-gray-300 cursor-not-allowed'
+            ? 'button font-extrabold hover:border-red-500 text-red-500 cursor-pointer'
+            : 'button font-extrabold hover:border-transparent text-gray-300 button cursor-not-allowed'
         }`}
       >
         ✕
@@ -106,4 +106,4 @@ function InputRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: I
   );
 }
 
-export default InputRow;
+export default InputItemRow;

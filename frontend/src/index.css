@@ -35,11 +35,6 @@ body {
         @apply text-white cursor-pointer;
         @apply hover:text-cyan-400 hover:border-purple-700;
     }
-
-    .btn:focus,
-    .btn:focus-visible {
-        outline: 4px auto -webkit-focus-ring-color;
-    }
 }
 
 /* if user has light mode */

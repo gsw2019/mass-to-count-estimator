@@ -1,4 +1,7 @@
-// TypeScript interfaces for items, rows, and input row properties.
+// typeScript interfaces for items, rows, and input row properties.
+
+// tells us what the type of a useState setter is
+import type {Dispatch, SetStateAction} from 'react';
 
 export interface Item {
   id: string;
@@ -7,9 +10,18 @@ export interface Item {
   batch_mass_oz: number;
 }
 
-export interface Row {
+export interface InputRow {
   id: number;
   selectedItem: string;
+}
+
+export interface ManageItems {
+  setItems: Dispatch<SetStateAction<Item[]>>;
+  items: Item[];
+}
+
+export interface NewItemRow {
+  setItems: Dispatch<SetStateAction<Item[]>>;
 }
 
 export interface InputRowProps {
