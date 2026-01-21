@@ -4,9 +4,9 @@
  */
 
 import {useEffect, useState} from "react";
-import type {Item, InputRowProps} from "../types/types.ts";
+import type {Item, InputItemRowProps} from "../types/types.ts";
 
-function InputItemRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: InputRowProps) {
+function InputItemRow({ items, selectedItem, onItemSelect, onRemove, showRemove }: InputItemRowProps) {
   const [totalMass, setTotalMass] = useState('');
   const [knownCount, setKnownCount] = useState('');
   const [estimatedCount, setEstimatedCount] = useState('');
@@ -35,7 +35,7 @@ function InputItemRow({ items, selectedItem, onItemSelect, onRemove, showRemove 
   }, [totalMass, knownCount, items, selectedItem]);
 
   return (
-    <div className="flex gap-4 pt-4 pr-4 items-center">
+    <div className="flex gap-4 pt-2 pr-4 items-center">
       <div className="w-1/3">
         <select
           className="w-full border border-gray-300 rounded px-2 py-1 h-8.5"

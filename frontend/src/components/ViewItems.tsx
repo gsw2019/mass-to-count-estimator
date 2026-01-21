@@ -1,11 +1,15 @@
-import type {Item} from "../types/types.ts";
+import type {Item } from "../types/types.ts";
 
-function ViewItems(props: {items: Item[]}) {
+function ViewItems(props: {items: Item[], estabName: string}) {
   const items = props.items;
+  const estabName = props.estabName;
 
   return (
     <div>
-      <p className="text-2xl pt-4">All Recorded Items</p>
+      { (estabName) ?
+        <p className="text-2xl pt-4">All recorded items for {estabName}</p> :
+        <p className="text-2xl pt-4">No establishment selected</p>
+      }
       <table className="w-7/12 text-left border border-gray-300 mt-4">
         <thead>
         <tr>

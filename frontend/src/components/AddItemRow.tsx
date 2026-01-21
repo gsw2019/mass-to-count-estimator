@@ -7,7 +7,7 @@ import type { NewItemRow } from "../types/types.ts";
 
 const API_URL = import.meta.env.VITE_API_URL
 
-function AddItemRow({setItems}: NewItemRow) {
+function AddItemRow({setItems, estab}: NewItemRow) {
   const [itemName, setItemName] = useState('')
   const [batchSize, setBatchSize] = useState('')
   const [batchMass, setBatchMass] = useState('')
@@ -21,7 +21,7 @@ function AddItemRow({setItems}: NewItemRow) {
 
     setItemNameDisplay(itemName)
 
-    fetch(`${API_URL}/add-item`, {
+    fetch(`${API_URL}/add-item?estab=${estab}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -48,7 +48,7 @@ function AddItemRow({setItems}: NewItemRow) {
         setBatchMass('')
 
         // recall the api request to reset the items on the page
-        fetch(`${API_URL}/items`)
+        fetch(`${API_URL}/items?estab=${estab}`)
           .then(response => response.json())
           .then(data => setItems(data.items))
           .catch(error => console.error('Error fetching items:', error));
@@ -61,7 +61,7 @@ function AddItemRow({setItems}: NewItemRow) {
 
   return (
     <div>
-      <p className="text-2xl pt-4">Adding A New Item</p>
+      <p className="text-2xl pt-4">Adding a new item</p>
       {/* column titles */}
       <div className="flex gap-5 pt-4 pr-4">
         <div className="w-1/4 font-bold">Item Name</div>

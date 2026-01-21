@@ -77,9 +77,9 @@ function HowItWorks() {
     <div className="AboutHowItWorks w-9/10">
       <p className="text-2xl py-3">How it works</p>
       <p>
-        This tool uses simple data and trivial arithmetic to estimate the total count of items that are tedious and time-consuming to count manually.
+        This tool uses simple data and trivial arithmetic to estimate a total count of items that are tedious and time-consuming to count manually.
         By providing the mass of a known quantity of an item (batch size and batch mass) and the total mass of the items you have, the tool calculates an estimated count based on the average mass per item.
-        Additionally, if you know the exact count of some items, you can input that information to add it to the estimate.
+        Additionally, if you know the exact count of some items, you can input that information and add it to the estimate.
       </p>
 
       <div className="space-y-3 pt-3">

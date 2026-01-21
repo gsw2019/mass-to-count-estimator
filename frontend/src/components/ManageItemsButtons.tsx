@@ -2,7 +2,7 @@
  * component that contains buttons that render a view to manage items
  */
 
-import type { ManageItems } from "../types/types.ts";
+import type { ManageItemsProps } from "../types/types.ts";
 import AddItemRow from "./AddItemRow.tsx";
 import RemoveItem from "./RemoveItem.tsx";
 import EditItem from "./EditItem.tsx";
@@ -11,34 +11,33 @@ import { Link, Routes, Route, useLocation, useNavigate } from "react-router-dom"
 import React, {useState} from 'react';
 
 
-function ManageItemsButtons({setItems, items}: ManageItems) {
+function ManageItemsButtons({setItems, items, estabId, estabName}: ManageItemsProps) {
   const [activeRoute, setActiveRoute] = useState("")
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleLinkClick = (e:React.MouseEvent<HTMLAnchorElement>, path: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     // check if current view path is the one that was clicked
     if (location.pathname === path) {
       // prevents Link from navigating
       e.preventDefault();
-
       // set button state to default to turn off outline
       setActiveRoute('')
-
       // force navigate to default view
       navigate('/');
-
     } else {
       // button wsa clicked but isn't active path so turn on outline
       setActiveRoute(path)
     }
-
   };
 
   return (
     <div className="ManageItems border-b-1 border-gray-300 pt-3 pb-7">
-      <p className="text-3xl font-bold pt-4">Manage Items</p>
+      { (estabName) ?
+        <p className="text-3xl font-bold pt-4">Manage Items For {estabName}</p> :
+        <p className="text-3xl font-bold pt-4">Manage Items</p>
+      }
 
       {/* button options */}
       <div className="ManageItemButtons flex gap-5 pt-4">
@@ -72,10 +71,11 @@ function ManageItemsButtons({setItems, items}: ManageItems) {
       {/* the selected view */}
       <div>
         <Routes>
-          <Route path="/add-item" element={<AddItemRow setItems={setItems}/>} />
+          <Route path="/" element={null}></Route>
+          <Route path="/add-item" element={<AddItemRow setItems={setItems} estab={estabId}/>} />
           <Route path="/remove-item" element={<RemoveItem />} />
           <Route path="/edit-item" element={<EditItem />} />
-          <Route path="/view-items" element={<ViewItems items={items}/>  } />
+          <Route path="/view-items" element={<ViewItems items={items} estabName={estabName}/>  } />
         </Routes>
       </div>
 

@@ -27,7 +27,7 @@ function ManagingItems() {
       content:
         <div>
           <p>
-            Allows a user to add a new item to the database of known items.
+            Allows a user to add a new item to the record of items recorded for the selected establishment.
             The user must provide the item name, batch size, and batch mass (oz).
             Once added, the new item will be available for selection and its data will be remembered for future use.
           </p>
@@ -53,11 +53,11 @@ function ManagingItems() {
 
   return (
     <div className="AboutManagingItems w-9/10">
-      <p className="text-2xl pt-7">Managing Items</p>
+      <p className="text-2xl pt-7">Managing items</p>
       <p className="pt-2">
-        This section explains how to manage the items in the Mass to Count Estimator (MTCE) application.
-        **Currently, only adding new items is supported.
-        Editing and removing existing items needs more secure handling and is not yet implemented.**
+        This section explains how the manage items operations work in the MTCE application.
+        Designed to make it hassle free when a new item is added to inventory, an item is removed from inventory, or an item changes design.
+        **Currently, only adding new items is supported.**
       </p>
 
       <div className="space-y-3 pt-3">
