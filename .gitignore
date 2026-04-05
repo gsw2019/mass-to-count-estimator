@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,pycharm,python,react,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,pycharm,python,react,node
 
+### env prep ###
+.envrc
+
 ### macOS ###
 # General
 .DS_Store
